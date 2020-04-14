@@ -6,13 +6,10 @@ PseudoCode:
 - if the value is not there, return -1
 '''
 
-def linearSearch(arr, val):
-    index = 0
+def linearSearchOfIndex(arr, val):
     for i in arr:
-        if i == val:
-            return index
-        elif i not in arr:
-            return -1
-        index += 1
+        if arr[i] == val:
+            return i
+        return -1
 
-print(linearSearch([1,2,3,4,5], 2))
+print(linearSearchOfIndex([1,2,3,4,5], 2))
