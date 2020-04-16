@@ -1,3 +1,6 @@
+import numpy as np
+import timeit
+
 def bubbleSortOptimized(arr):
     for i in range(len(arr)):
         noSwaps = True # we set True in every loop
@@ -19,8 +22,12 @@ def bubbleSortOptimized(arr):
     return arr
 
 
-
-print(bubbleSortOptimized([13,22,43,54,35,-46,7]))
+arr = np.random.normal(1,5,100)
+# print(bubbleSortOptimized([13,22,43,54,35,-46,7]))
+start = timeit.timeit()
+print(bubbleSortOptimized(arr))
+end = timeit.timeit()
+print('time:', end - start)
 # print(bubbleSortOptimized([8,1,2,3,4,5,6,7])) # only two passes with noSwaps
 
 # noSwaps optimize our bubble sort especially if it is nearly sorted
