@@ -19,7 +19,7 @@ def selectionSort(arr):
     for i in range(len(arr)):
         min = i
         for j in range(i+1, len(arr), 1): # this ensures that in another pass, we start 
-            # NOT at the beginning
+            # after i
             # print(i, j)
             if arr[min] > arr[j]:
                 print('swap', arr[min], arr[j], arr)
