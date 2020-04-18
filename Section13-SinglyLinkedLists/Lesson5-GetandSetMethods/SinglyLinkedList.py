@@ -88,7 +88,22 @@ class SinglyLinkedList:
         self.length += 1
         return
 
-    def get(self, index):
+    def get(self, index): # This returns the actual node which will be used 
+        # with set()
+        if index < 0 or index >= self.length:
+            return None
+        counter = 0
+        node = self.head
+        if not node:
+            return None
+        else:
+            while node:
+                if counter == index:
+                    return node
+                node = node.next
+                counter += 1
+
+    def getValue(self, index): # Returns node value, cannot be used with set()
         if index < 0 or index >= self.length:
             return None
         counter = 0
@@ -102,11 +117,19 @@ class SinglyLinkedList:
                 node = node.next
                 counter += 1
 
+    def set(self, value, index):
+        foundNode = self.get(index)
+        if not foundNode:
+            return False
+        foundNode.value = value
+        return True
+
+
 llist = SinglyLinkedList()
 
 llist.push('A')
 llist.push(44)
-llist.push([2,3,4])
+llist.push(110)
 llist.push('D')
 llist.print_list()
 print('------')
@@ -118,7 +141,10 @@ llist.unshift(66)
 
 # print('pop()', llist.pop())
 llist.print_list()
-print('get()', llist.get(0))
+print('getValue()', llist.getValue(2))
+print('set()', llist.set(567, 2))
+print('getValue()', llist.getValue(2))
+llist.print_list()
 
 # llist.print_head()
 # print('pop()',llist.pop())
