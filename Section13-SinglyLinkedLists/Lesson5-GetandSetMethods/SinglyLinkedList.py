@@ -88,6 +88,19 @@ class SinglyLinkedList:
         self.length += 1
         return
 
+    def get(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        counter = 0
+        node = self.head
+        if not node:
+            return None
+        else:
+            while node:
+                if counter == index:
+                    return node.value
+                node = node.next
+                counter += 1
 
 llist = SinglyLinkedList()
 
@@ -105,6 +118,7 @@ llist.unshift(66)
 
 # print('pop()', llist.pop())
 llist.print_list()
+print('get()', llist.get(0))
 
 # llist.print_head()
 # print('pop()',llist.pop())
