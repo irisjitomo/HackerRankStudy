@@ -4,7 +4,7 @@ import timeit
 '''
 import helper function here
 '''
-def mergeHelperUdemySolution(arr1, arr2):
+def mergeHelper(arr1, arr2):
     results = []
     i = j = 0
     while i < len(arr1) and j < len(arr2):
@@ -35,14 +35,14 @@ def mergeSort(arr):
     half = (len(arr) // 2)
     if len(arr) <= 1:
         return arr
-    left = mergeSort(arr[0:half]) # we call mergeSort here to keep cutting in half
+    left = mergeSort(arr[:half]) # we call mergeSort here to keep cutting in half
     right = mergeSort(arr[half:]) # we call mergeSort here to keep cutting in half
-    return mergeHelperUdemySolution(left, right) # we use the helped function to
+    return mergeHelper(left, right) # we use the helped function to
     # sort the elements
 
 
-# arr = np.random.normal(1,5,1000000)
-arr = [12,1,3,16,57]
+arr = np.random.normal(1,5,1000000)
+# arr = [12,1,3,16,57]
 
 start = timeit.timeit()
 print(mergeSort(arr))
