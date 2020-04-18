@@ -13,17 +13,27 @@ class SinglyLinkedList:
         print(self.length)
 
     def print_list(self):
+        if not self.head:
+            print('Empty List')
         cur_node = self.head
         while cur_node:
             print(cur_node.value)
             cur_node = cur_node.next
 
-    def print_last(self):
+    def print_tail(self):
+        if not self.tail:
+            print('Empty List')
         node = self.head
         while node:
             if node == self.tail:
                 print('self.tail value: ', node.value)
             node = node.next
+
+    def print_head(self):
+        if not self.head:
+            print('Empty List')
+        else:  
+            print('self.head:', self.head.value)
 
     def push(self, value):
         new_node = Node(value)
@@ -56,6 +66,26 @@ class SinglyLinkedList:
                 self.length -= 1
             node = node.next
         return pop
+    
+    def shift(self):
+        node = self.head
+        if not node:
+            return None
+        node_value = node.value
+        self.head = self.head.next
+        self.length -= 1
+        # node = None
+        return node_value
+    
+    def unshift(self, value):
+        new_head = Node(value)
+        if not self.head:
+            self.head = new_head
+            self.tail = self.head
+        new_head.next = self.head
+        self.head = new_head
+        self.length += 1
+        return
 
 
 llist = SinglyLinkedList()
@@ -67,10 +97,17 @@ llist.push('D')
 llist.print_list()
 print('------')
 
-print('pop()', llist.pop())
-print('pop()',llist.pop())
-print('pop()',llist.pop())
-print('pop()',llist.pop())
+print('shift()', llist.shift())
+llist.unshift(66)
+# print('pop()', llist.pop())
+# print('pop()', llist.pop())
+
+# print('pop()', llist.pop())
 llist.print_list()
+
+# llist.print_head()
+# print('pop()',llist.pop())
+# print('pop()',llist.pop())
+# print('pop()',llist.pop())
 
 llist.__len__()
