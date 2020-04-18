@@ -10,7 +10,7 @@ class SinglyLinkedList:
         self.length = 0 
     
     def __len__(self):
-        print(self.length)
+        print('length: ', self.length)
 
     def print_list(self):
         if not self.head:
@@ -124,29 +124,63 @@ class SinglyLinkedList:
         foundNode.value = value
         return True
 
+    def insert(self, index, value):
+        new_node = Node(value)
+        if index < 0 or index > self.length:
+            return False
+        elif index == self.length:
+            self.push(value)
+        elif index == 0:
+            self.unshift(value)
+        else:
+            node = self.get(index - 1)
+            prev = node
+            aft = node.next
+            new_node.next = aft
+            prev.next = new_node
+            self.length += 1
+            return True
+
 
 llist = SinglyLinkedList()
-
+'''
+Testing push()
+'''
 llist.push('A')
 llist.push(44)
 llist.push(110)
 llist.push('D')
-llist.print_list()
+llist.print_list() 
+llist.__len__()
 print('------')
 
-print('shift()', llist.shift())
-llist.unshift(66)
-# print('pop()', llist.pop())
-# print('pop()', llist.pop())
+'''
+Testing insert()
+'''
+llist.insert(2, 'hello')
 
-# print('pop()', llist.pop())
-llist.print_list()
-print('getValue()', llist.getValue(2))
-print('set()', llist.set(567, 2))
-print('getValue()', llist.getValue(2))
+'''
+Testing shift(), unshift()
+'''
+# print('shift()', llist.shift())
+# llist.unshift(66)
 llist.print_list()
 
+'''
+Testing getValue() and set()
+'''
+# print('getValue()', llist.getValue(2))
+# print('set()', llist.set(567, 2))
+# print('getValue()', llist.getValue(2))
+# llist.print_list()
+
+'''
+Testing pop()
+'''
 # llist.print_head()
+# print('pop()', llist.pop())
+# print('pop()', llist.pop())
+# print('pop()', llist.pop())
 # print('pop()',llist.pop())
 # print('pop()',llist.pop())
 # print('pop()',llist.pop())
