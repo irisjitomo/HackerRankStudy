@@ -102,18 +102,23 @@ dll.push(3451)
 dll.push(123)
 dll.push(1456)
 dll.push('Hello')
-# dll.print_list()
+dll.print_list()
 print('pop(), ', dll.pop())
 dll.print_list()
 dll.__len__()
 
+# '''
+# testing shift() and unshift()
+# '''
+# print('shift()', dll.shift())
+# dll.print_list()
+# dll.unshift('Please Work')
+# dll.print_list()
+
 '''
-testing shift() and unshift()
+testing get() and set()
 '''
-print('shift()', dll.shift())
-dll.print_list()
-dll.unshift('Please Work')
-dll.print_list()
+
 
 
 dll.__len__()
