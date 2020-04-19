@@ -89,6 +89,50 @@ class DoublyLinkedList:
         self.length += 1
         return
 
+    def getVal(self, index):
+        half = self.length // 2
+        if index < 0 or index >= self.length:
+            return None
+        elif index <= half:
+            count = 0
+            node = self.head
+            while count != index:
+                node = node.next
+                count += 1
+        else:
+            count = self.length - 1
+            node = self.tail
+            while count != index:
+                node = node.prev
+                count -= 1
+        return node.value
+
+    def get(self, index):
+        half = self.length // 2
+        if index < 0 or index >= self.length:
+            return None
+        elif index <= half:
+            count = 0
+            node = self.head
+            while count != index:
+                node = node.next
+                count += 1
+        else:
+            count = self.length - 1
+            node = self.tail
+            while count != index:
+                node = node.prev
+                count -= 1
+        return node
+
+    def set(self, value, index):
+        foundNode = self.get(index)
+        if not foundNode:
+            return False
+        foundNode.value = value
+        return True
+    
+
 
 
 
@@ -102,10 +146,13 @@ dll.push(3451)
 dll.push(123)
 dll.push(1456)
 dll.push('Hello')
+dll.push('How')
+dll.push('Are')
+dll.push('You')
 dll.print_list()
-print('pop(), ', dll.pop())
+# print('pop(), ', dll.pop())
 dll.print_list()
-dll.__len__()
+# dll.__len__()
 
 # '''
 # testing shift() and unshift()
@@ -118,7 +165,9 @@ dll.__len__()
 '''
 testing get() and set()
 '''
-
+print('get()', dll.getVal(1))
+print('set()', dll.set(69, 1))
+dll.print_list()
 
 
 dll.__len__()
