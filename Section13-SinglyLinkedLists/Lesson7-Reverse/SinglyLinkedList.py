@@ -16,10 +16,12 @@ class SinglyLinkedList:
         if not self.head:
             print('Empty List')
         cur_node = self.head
+        list = []
         while cur_node:
-            print(cur_node.value)
+            list.append(cur_node.value)
             cur_node = cur_node.next
-
+        print(list)
+        
     def print_tail(self):
         if not self.tail:
             print('Empty List')
@@ -74,7 +76,6 @@ class SinglyLinkedList:
         node_value = node.value
         self.head = self.head.next
         self.length -= 1
-        # node = None
         return node_value
     
     def unshift(self, value):
@@ -145,9 +146,9 @@ class SinglyLinkedList:
         if index < 0 or index > self.length:
             return None
         elif index == 0:
-            not not self.shift()
+            return self.shift()
         elif index == self.length:
-            not not self.pop()
+            return self.pop()
         else:
             prev = self.get(index - 1)
             deleted = prev.next
@@ -155,6 +156,17 @@ class SinglyLinkedList:
             prev.next = next
             self.length -= 1
             return deleted.value
+
+    def reverse(self):
+        prev = None
+        current = self.head
+        while current is not None:
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        self.head = prev
+
 
 
 llist = SinglyLinkedList()
@@ -174,8 +186,8 @@ print('------')
 Testing insert() and remove()
 '''
 # llist.insert(2, 'hello')
-llist.remove(3)
-llist.print_list()
+# llist.remove(3)
+# llist.print_list()
 
 '''
 Testing shift(), unshift()
@@ -202,5 +214,11 @@ Testing pop()
 # print('pop()',llist.pop())
 # print('pop()',llist.pop())
 # print('pop()',llist.pop())
+
+'''
+Testing reverse()
+'''
+llist.reverse()
+llist.print_list()
 
 llist.__len__()
