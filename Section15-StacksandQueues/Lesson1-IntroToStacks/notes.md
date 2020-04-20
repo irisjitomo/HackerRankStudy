@@ -7,7 +7,7 @@
 
 # What is a stack?
     - An abstract data structure
-    - a `LIFO` data structure
+    - a `LIFO` data structure (LAST IN FIRST OUT)
     - Last element addeded to the stack will be the first element removed from the stack
 
 # What are they used for?

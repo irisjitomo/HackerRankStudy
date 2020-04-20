@@ -31,7 +31,6 @@ class Stack:
         else:
             temp = self.first
             self.first = self.first.next
-            temp.next = None
         self.size -= 1
         return temp.value
 
@@ -41,4 +40,8 @@ s.push(1)
 s.push(2)
 s.push(3)
 s.push(4)
+print(s.pop())
+print(s.pop())
+print(s.pop())
+print(s.pop())
 print(s.pop())
