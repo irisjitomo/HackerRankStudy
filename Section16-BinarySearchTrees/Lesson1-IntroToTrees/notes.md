@@ -15,3 +15,6 @@ Trees - Nonlinear
     Edge - connection between one node and another
 
 # Uses for Trees
+    - HTML DOM
+    - Network Routing
+    - Abstract Syntax Trees
