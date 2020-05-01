@@ -21,3 +21,13 @@
         return self._hash(key) % self.capacity
 
 - For this function, we use the `_hash()` function in order to get our hash, but we `modulo` it with the `capacity` of the hash table SO that we can get our index place in our hash table storage
+
+# This is a more reliable hash function - djb2 hash
+
+    def _hash_djb2(self, s):
+        hash = 5381
+        for x in s:
+            hash = (( hash << 5) + hash) + ord(x)
+        return hash & 0xFFFFFFFF
+
+- This is more `reliable` since we get the same hash AND the same index everytime

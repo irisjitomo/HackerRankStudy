@@ -9,11 +9,12 @@ class HashTable:
     def _hash_djb2(self, s):
         hash = 5381
         for x in s:
-            hash = (( hash << 5) + hash) + ord(x)
+            hash = ((hash << 5) + hash) + ord(x)
         return hash & 0xFFFFFFFF
 
     def _hash_mod(self, key):
         return self._hash(key) % self.capacity
+
 
 ht = HashTable(10)
 
