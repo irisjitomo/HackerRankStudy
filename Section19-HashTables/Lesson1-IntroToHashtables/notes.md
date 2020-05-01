@@ -27,3 +27,32 @@
     - JS - Objects and Maps*
     - Java, Go, and Scala have Maps
     - Ruby has... Hashes
+
+*********************************************************************************
+
+# Introductory Example:
+
+- Imagine we want to store some colors, We could just use an array/list:
+
+colors = ['#ff69b4', '#ff4500', '#00ffff']
+
+- Not super readable! What do these colors correspond to?
+
+- It would be better to use human readable keys
+
+# pink ----> #ff69b4
+# orangered ----> #ff4500
+# cyan ----> #00ffff
+
+colors['cyan'] is WAY BETTER than colors[2]
+
+
+# What's the goal in this section?
+
+Reinvent key-value pairs
+
+
+# How can we get human-readability and computer readability?
+
+- Hash tables are to the rescue!
+
