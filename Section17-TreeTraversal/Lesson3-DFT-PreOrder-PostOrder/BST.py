@@ -1,5 +1,7 @@
 import sys
 sys.path.append('./stack.py')
+sys.path.append('./queue.py')
+from queue import Queue
 from stack import Stack
 
 
@@ -32,6 +34,19 @@ class BinarySearchTree:
                 q.enqueue(temp.left)
             if temp.right is not None:
                 q.enqueue(temp.right)
+        return data
+    
+    def dfs(self, node):
+        data = []
+        s = Stack()
+        s.push(node)
+        while s.size != 0:
+            temp = s.pop()
+            data.append(temp.value)
+            if temp.left is not None:
+                s.push(temp.left)
+            if temp.right is not None:
+                s.push(temp.right)
         return data
 
     def dfs_preorder(self, node):
@@ -78,13 +93,16 @@ bst.insert(8)
 bst.insert(20)
 
 # Breadth First Search
-# print('Breadth First Search: ', bst.bft(bst))
+print('Breadth First Search: ', bst.bfs(bst))
+
+# Depth First Search
+print('Depth First Search: ', bst.dfs(bst))
 
 # Depth First Search - Pre Order
-# print('Depth First Search: ', bst.dfs_preorder(bst))
+print('Depth First Search Pre: ', bst.dfs_preorder(bst))
 
 # Depth First Search - Post Order
-# print('Depth First Search Post: ', bst.dfs_post_order(bst))
+print('Depth First Search Post: ', bst.dfs_post_order(bst))
 
 # Depth First Search - In order
-# print('Depth First Search In Order: ', bst.dfs_in_order(bst))
+print('Depth First Search In Order: ', bst.dfs_in_order(bst))
