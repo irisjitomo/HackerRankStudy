@@ -16,19 +16,15 @@ index of 0 with whatever the index is of the new minimum number
 '''
 
 def selectionSort(arr):
-    for i in range(len(arr)):
-        min = i
-        for j in range(i+1, len(arr), 1): # this ensures that in another pass, we start 
-            # after i
-            # print(i, j)
-            if arr[min] > arr[j]:
-                print('swap', arr[min], arr[j], arr)
-                arr[min], arr[j] = arr[j], arr[min]
-                min = j
-                print('new min: ', arr[min])
-        print('completed pass')
-        # print('new arr:', arr)x
-        print('starting new pass')
+    for i in range(0, len(arr)):
+        cur_index = i
+        smallest_index = cur_index
+        for j in range(i + 1, len(arr)):
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
+        temp = arr[i]
+        arr[cur_index] = arr[smallest_index]
+        arr[smallest_index] = temp
     return arr
 
 print(selectionSort([2342342,5673,6346,1543,1022342,345345,356456,2342]))

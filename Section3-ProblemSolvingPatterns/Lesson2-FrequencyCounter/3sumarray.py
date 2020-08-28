@@ -14,8 +14,6 @@ def three_sum_arr(arr, target):
                     if i + j + k == target:
                         new_arr = []
                         new_arr.extend([i, j, k])
-                        # remove those 3 vals
-                            # ?????
                         # push those 3 vals inside the new array
                         sum_array.append(new_arr)
     # return new array

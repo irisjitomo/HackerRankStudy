@@ -37,12 +37,12 @@ def mergeSort(arr):
         return arr
     left = mergeSort(arr[:half]) # we call mergeSort here to keep cutting in half
     right = mergeSort(arr[half:]) # we call mergeSort here to keep cutting in half
-    return mergeHelper(left, right) # we use the helped function to
+    return mergeHelper(left, right) # we use the helper function to
     # sort the elements
 
 
-arr = np.random.normal(1,5,1000000)
-# arr = [12,1,3,16,57]
+# arr = np.random.normal(1,5,1000000)
+arr = [12,1,3,16,57]
 
 start = timeit.timeit()
 print(mergeSort(arr))

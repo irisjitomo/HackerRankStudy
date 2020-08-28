@@ -1,5 +1,19 @@
 '''
-a function that takes two nums, if the frequency of  digits in num1 matches the num2 digits, return True
+
+def sameFrequency:
+
+a Function that takes two nums, if the frequency of digits in num1 matches the num2 digits, return True
+
+examples:
+
+num_a = 123 and num_b = 321, it would return True
+
+num_c = 123456 and num_d = 765432, it would return False
+
+num_e = 967845 and num_f = 785469, it would return True
+
+Try to think of edge cases, things to look for that would automatically make it return False
+
 '''
 
 def sameFrequency(num1,num2):
