@@ -15,7 +15,7 @@ def same(arr1, arr2):
 
 arr1 = [2,3, 2, 2]
 arr2 = [9,4,4,4]
-arr3 = [1,3,4,5]
+arr3 = [4,3,4,5]
 
 arr4 = [10, 2, 4, 6]
 arr5 = [4, 16, 36, 100]
@@ -50,4 +50,4 @@ def same_refactored(arr1, arr2):
             return True
         
 
-print(same_refactored(arr4, arr5))
+print(same_refactored(arr3, arr5))

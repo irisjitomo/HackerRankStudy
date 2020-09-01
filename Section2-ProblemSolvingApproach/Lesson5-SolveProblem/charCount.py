@@ -67,4 +67,4 @@ def charCountAllChars(str):
     # return dict
     return chars
 
-# print(charCountAllChars('sdfsdfsdfsdf     sdfsdfsdf   !@&*Y&*Y&*Y@#*&Y&*!'))
+print(charCountAllChars('sdfsdfsdfsdf     sdfsdfsdf   !@&*Y&*Y&*Y@#*&Y&*!'))
