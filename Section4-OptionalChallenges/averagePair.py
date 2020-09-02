@@ -39,6 +39,6 @@ def averagePair(arr, average):
 
 
 
-# print(averagePair([1,2,3], 2.5))
-print(averagePair([1,3,3,5,6,7,10,12,19], 6.5))
+print(averagePair([1,2,3], 2.5))
+# print(averagePair([1,3,3,5,6,7,10,12,19], 6.5))
 # print(averagePair([55,1,6,10,15,26,11],12.5))

@@ -42,3 +42,4 @@ def sameFrequency(num1,num2):
 print(sameFrequency(1232261,2373112))
 print(sameFrequency(4567777,7444465))
 print(sameFrequency(123,321))
+print(sameFrequency(34,14))
